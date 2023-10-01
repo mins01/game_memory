@@ -96,11 +96,15 @@ class Game{
             this.selecting = false;
             this.board.checkMatching();
             if(this.board.checkEnd()){
-                return this.end();    
+                this.draw()
+                setTimeout(()=>{
+                    return this.end();    
+                },500)
+                return;
             }else{
                 this.draw()
             }
-        },1000)
+        },800)
     }
 }
 

@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+/* http://samg.net/2020/wp-content/uploads/2020/08/heartsping_003.png */
+
+.teenieping .game-card .game-card-view[data-num]::before{ 
+  content: ""; 
+  /* background-image: url(http://samg.net/2020/wp-content/uploads/2020/08/heartsping_003.png); */
+  background-position: center;
+  background-size: auto 95%;
+  background-image: none;
+  background-repeat: no-repeat;
+}
+
+.teenieping .game-card .game-card-view[data-num="0"]::before{ background-image: url(http://samg.net/2020/wp-content/uploads/2020/08/heartsping_003.png);  }
+.teenieping .game-card .game-card-view[data-num="1"]::before{ background-image: url(http://samg.net/2020/wp-content/uploads/2020/08/baroping_012-674x1024.png); }
+.teenieping .game-card .game-card-view[data-num="2"]::before{ background-image: url(http://samg.net/2020/wp-content/uploads/2020/08/ajaping_013.png); }
+.teenieping .game-card .game-card-view[data-num="3"]::before{ background-image: url(http://samg.net/2020/wp-content/uploads/2020/08/chachaping_011.png); }
+.teenieping .game-card .game-card-view[data-num="4"]::before{ background-image: url(http://samg.net/2020/wp-content/uploads/2020/08/lalaping_008.png); }
+.teenieping .game-card .game-card-view[data-num="5"]::before{ background-image: url(http://samg.net/2020/wp-content/uploads/2020/08/romi_003.png);  }
+.teenieping .game-card .game-card-view[data-num="6"]::before{ background-image: url(http://samg.net/2020/wp-content/uploads/2021/09/HEARTSPING_007-959x1024.png); }
+.teenieping .game-card .game-card-view[data-num="7"]::before{ background-image: url(http://samg.net/2020/wp-content/uploads/2021/09/JOAHPING_006-780x1024.png); }
+.teenieping .game-card .game-card-view[data-num="8"]::before{ background-image: url(http://samg.net/2020/wp-content/uploads/2021/09/TEEHEEPING_006-1024x811.png); }
+.teenieping .game-card .game-card-view[data-num="9"]::before{ background-image: url(http://samg.net/2020/wp-content/uploads/2021/09/TRUSTPING_006-1024x959.png); }
+
+
+
