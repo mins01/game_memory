@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ko" >
 <head>
-	<title>티니핑 짝맞추기</title>
+	<title>포켓몬 짝맞추기</title>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Script-Type" content="text/javascript">
 	<meta http-equiv="Content-Style-Type" content="text/css">
@@ -48,7 +48,7 @@
 			})
 	</script> -->
 	<link rel="stylesheet" href="assets/style.css">
-	<link rel="stylesheet" href="assets/teenieping.css">
+	<link rel="stylesheet" href="assets/pokemon.css">
 	<script type="module">
 		import Game from "./memory/Game.js";
 		import Board from "./memory/Board.js";
@@ -119,9 +119,35 @@
 			// game.start();
 		})
 	</script>
+<script>
+	//https://data1.pokemonkorea.co.kr/newdata/pokedex/mid/101001.png
+	window.addEventListener('load',(event)=>{
+		const start = 1;
+		const end = 1010;
+		let nums = Array(end - start + 1).fill().map((_, idx) => start + idx)
+		nums.sort(() => Math.random() - 0.5);
+		nums = nums.slice(0,10)
+		console.log(nums);
+		const iwc_items_ready = document.querySelector('.iwc-items-ready');
+		// iwc_items_ready.innerHTML = '';
+		// let gameCardViews = document.querySelectorAll('.game-card-view');
+		let styles = [];
+		nums.forEach((num,idx)=>{
+			const filled_num = num.toString().padStart(4,'0');
+			const img_url = `https://data1.pokemonkorea.co.kr/newdata/pokedex/mid/${filled_num}01.png`
+			console.log(img_url);
 
+			styles.push(`.pokemon .game-card .game-card-view[data-num="${idx}"]::before{ background-image: url(${img_url}); }`);
+		})
+		console.log(styles.join("\n"));
+
+		let tag_style = document.createElement('style');
+		tag_style.innerText = styles.join("\n");
+		document.querySelector('head').appendChild(tag_style)
+	})
+</script>
 </head>
-<body class="teenieping">
+<body class="pokemon">
 	<div class="container py-1" >
 		<template id="template-card">
 			<div class="game-card" data-idx data-num data-selected data-found>
@@ -130,7 +156,7 @@
 		</template>
 		<div class="card" >
 			<div class="card-header">	
-				<h1 style="font-size: 1em;" class="m-0 p-0">티니핑 짝맞추기</h1>
+				<h1 style="font-size: 1em;" class="m-0 p-0">포켓몬 짝맞추기</h1>
 			</div>
 			<div class="card-body p-0" >
 			  <div class="game game-memory ">
@@ -172,9 +198,8 @@
 	<hr>
 	<div class="text-danger text-right px-3">
 		<small style="line-height: 1.1em;">
-			캐치! 티니핑 이미지 출처 : <a href="http://samg.net/contents/" target="_blank">(주)에스에이엠지엔터테인먼트 홈페이지</a><br>
-			캐치! 티니핑 이미지에 대해서 소유권/저작권은 '(주)에스에이엠지엔터테인먼트'에 있습니다.<br>
-			이미지가 문제 된다면 연락주세요.
+			포켓몬 이미지 출처 : <a href="https://pokemonkorea.co.kr/" target="_blank">포켓몬코리아 홈페이지</a><br>
+			문제 된다면 연락주세요.
 		</small>
 	</div>
 

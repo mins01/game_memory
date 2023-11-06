@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+
+.pokemon .game-card .game-card-view[data-num]::before{ 
+  content: ""; 
+  background-position: center;
+  background-size: contain;
+  background-image: none;
+  background-repeat: no-repeat;
+}
+
+
+/* .pokemon .game-card .game-card-view[data-num]::before{ 
+  content: none; 
+} */
+
+/* .pokemon .game-card .game-card-view[data-num="0"]::before{ background-image: url(http://samg.net/2020/wp-content/uploads/2020/08/heartsping_003.png);  } */
+
+
+
+
